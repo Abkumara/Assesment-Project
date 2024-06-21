@@ -1,4 +1,3 @@
-import 'package:assesmnet_project/View/homepage.dart';
 import 'package:assesmnet_project/firebase_options.dart';
 import 'package:assesmnet_project/View/logiinpage.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Assesment',
       theme: ThemeData(),
-      home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }

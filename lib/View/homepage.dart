@@ -35,9 +35,22 @@ class _HomePageState extends State<HomePage> {
                 child: Text(snapshot.error.toString()),
               );
             } else if (snapshot.hasData) {
-              return Center(child: Text('succsess'));
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text('${snapshot.data![index].title}'),
+                    leading:
+                        Image.network('${snapshot.data![index].thumbnail}'),
+                    subtitle: Text((snapshot.data![index].brand != null)
+                        ? '${snapshot.data![index].brand}'
+                        : ''),
+                    trailing: Text('${snapshot.data![index].price}'),
+                  );
+                },
+              );
             } else {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }
