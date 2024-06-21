@@ -1,5 +1,6 @@
 import 'package:assesmnet_project/Controller/apicontroller.dart';
 import 'package:assesmnet_project/Model/productmodel.dart';
+import 'package:assesmnet_project/View/detailpage.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -46,6 +47,16 @@ class _HomePageState extends State<HomePage> {
                         ? '${snapshot.data![index].brand}'
                         : ''),
                     trailing: Text('${snapshot.data![index].price}'),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailPage(
+                              index: index,
+                              snapshot: snapshot,
+                            ),
+                          ));
+                    },
                   );
                 },
               );

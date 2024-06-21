@@ -1,10 +1,10 @@
 class ProductModel {
   String? thumbnail;
-  String? title;
+  String title;
   double price;
   String? brand;
   double rating;
-  String? description;
+  String description;
   List<dynamic> images;
   ProductModel({
     required this.brand,
@@ -19,7 +19,7 @@ class ProductModel {
     return ProductModel(
         brand: json["brand"],
         description: json["description"],
-        images: json["images"],
+        images: List<String>.from(json["images"]),
         price: json["price"],
         rating: json["rating"],
         thumbnail: json["thumbnail"],
