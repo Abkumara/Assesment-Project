@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Assesment',
       theme: ThemeData(),
-      home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }
